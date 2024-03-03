@@ -16,7 +16,8 @@ public class LoginPage {
     public void verifyErrorNotification(String expectedText) {
         errorNotification.shouldHave(exactText(expectedText)).shouldBe(visible);
     }
-    public VerificationPage validLogin(DataHelper.AuthInfo.info) {
+
+    public VerificationPage validLogin(DataHelper.AuthInfo info) {
         loginField.setValue(info.getLogin());
         passwordField.setValue(info.getPassword());
         loginButton.click();
