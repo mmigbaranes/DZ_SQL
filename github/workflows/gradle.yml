@@ -4,13 +4,12 @@ on: [push, pull_request]
 
 jobs:
   build:
+  - name: Container start
+    run: docker-compose up &
 
     runs-on: ubuntu-latest
 
-
     steps:
-      - name: Container start
-        run: docker-compose up &
       - name: Waiting for сontainer start
         run: sleep 30
       - uses: actions/checkout@v2
@@ -26,7 +25,7 @@ jobs:
         # имя файла SUT будет отличаться в каждой задаче.
         # & означает, что в фоновом режиме не блокируем терминал для запуска тестов,
         # обязательно должен быть для запуска SUT в CI
-        run: java -jar ./artifacts/app-card-delivery.jar &
+        run: java -jar ./artifacts/app-deadline.jar &
 
       - name: Build with Gradle
         # Запускаем автотесты
