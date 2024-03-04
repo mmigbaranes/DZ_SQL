@@ -20,14 +20,14 @@ public class DataHelper {
     }
 
     private static String generateRandomPassword() {
-        return new FAKER.internet().password();
+        return FAKER.internet().password();
     }
 
-    private static String generateRandomUser() {
+    public static AuthInfo generateRandomUser() {
         return new AuthInfo(generateRandomLogin(), generateRandomPassword());
     }
 
-    private static String generateRandomVerificationCode() {
+    public static VerificationCode generateRandomVerificationCode() {
         return new VerificationCode(FAKER.numerify("######"));
     }
 

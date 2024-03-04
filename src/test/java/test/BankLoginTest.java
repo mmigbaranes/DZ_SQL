@@ -6,6 +6,7 @@ import org.junit.jupiter.api.*;
 import page.LoginPage;
 
 import static com.codeborne.selenide.Selenide.open;
+import static data.SQLHelper.cleanAuthCode;
 import static data.SQLHelper.cleanDatabase;
 
 public class BankLoginTest {
@@ -13,7 +14,7 @@ public class BankLoginTest {
 
     @AfterEach
     void tearDown() {
-        cleanAuthCodes();
+        cleanAuthCode();
     }
 
     @AfterAll
