@@ -20,7 +20,7 @@ jobs:
       - name: Container start
         run: docker-compose up &
       - name: Waiting for сontainer start
-        run: sleep 40
+        run: sleep 30
       - name: Start SUT
         # Запускаем SUT,
         # имя файла SUT будет отличаться в каждой задаче.
